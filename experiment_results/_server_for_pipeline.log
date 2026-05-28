@@ -1,0 +1,230 @@
+INFO:     Will watch for changes in these directories: ['/app']
+INFO:     Uvicorn running on http://0.0.0.0:8765 (Press CTRL+C to quit)
+INFO:     Started reloader process [11] using WatchFiles
+
+  AgentSkein API Server starting on http://0.0.0.0:8765
+  Swagger UI: http://localhost:8765/docs
+  ReDoc:      http://localhost:8765/redoc
+
+INFO:     Started server process [13]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[AgentSkein] Using InMemory backend (data lost on restart)
+[AgentSkein API] Server ready.
+INFO:     127.0.0.1:57606 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57618 - "GET /health HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [info     ] namespace.created              agent=Orchestrator namespace=github-ai-ecosystem
+INFO:     127.0.0.1:57626 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57628 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57648 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57636 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57662 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [info     ] branch.created                 branch=branch/Researcher-1 parent=main strategy=lazy_cow
+INFO:     127.0.0.1:57668 - "POST /namespace/github-ai-ecosystem/fork HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57674 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [info     ] branch.created                 branch=branch/Researcher-3 parent=main strategy=lazy_cow
+INFO:     127.0.0.1:57678 - "POST /namespace/github-ai-ecosystem/fork HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [info     ] branch.created                 branch=branch/Researcher-2 parent=main strategy=lazy_cow
+INFO:     127.0.0.1:57694 - "POST /namespace/github-ai-ecosystem/fork HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-test-2 reason=Prompt injection pattern detected: ignore\s+(all\s+)?previous\s+instructions severity=high
+INFO:     127.0.0.1:57704 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57708 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-test-4 reason=Prompt injection pattern detected: you\s+are\s+now\s+(a|an)\s+ severity=high
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-test-4 reason=Prompt injection pattern detected: \[INST\]|\[/INST\] severity=high
+INFO:     127.0.0.1:57714 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-test-5 reason=Prompt injection pattern detected: <\|system\|> severity=high
+INFO:     127.0.0.1:57718 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57726 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57736 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-test-8 reason=Prompt injection pattern detected: you\s+are\s+now\s+(a|an)\s+ severity=high
+INFO:     127.0.0.1:57750 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57764 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57766 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57782 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57790 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57800 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57810 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57818 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57828 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57838 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57852 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57864 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57880 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=storm-test-key reason=Overwrite storm: 21 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57888 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=storm-test-key reason=Overwrite storm: 22 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57898 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=storm-test-key reason=Overwrite storm: 23 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57906 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=storm-test-key reason=Overwrite storm: 24 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57918 - "POST /namespace/github-ai-ecosystem/write/storm-test-key HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57932 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Safety-Monitor&branch=main HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=safety-report-details reason=Overwrite storm: 25 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57934 - "POST /namespace/github-ai-ecosystem/write/safety-report-details HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Safety-Monitor key=activity-Safety-Monitor reason=Overwrite storm: 26 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:57942 - "POST /namespace/github-ai-ecosystem/write/activity-Safety-Monitor HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57964 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57980 - "POST /namespace/github-ai-ecosystem/write/repo-Significant-Gravitas--AutoGPT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57996 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58008 - "POST /namespace/github-ai-ecosystem/write/repo-langchain-ai--langchain HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58020 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58028 - "POST /namespace/github-ai-ecosystem/write/repo-langgenius--dify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58038 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58048 - "POST /namespace/github-ai-ecosystem/write/repo-Shubhamsaboo--awesome-llm-apps HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58060 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58076 - "POST /namespace/github-ai-ecosystem/write/repo-browser-use--browser-use HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58090 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58106 - "POST /namespace/github-ai-ecosystem/write/repo-microsoft--qlib HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58110 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58112 - "POST /namespace/github-ai-ecosystem/write/repo-OpenBB-finance--OpenBB HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58128 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58144 - "POST /namespace/github-ai-ecosystem/write/repo-mem0ai--mem0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58150 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58166 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58176 - "POST /namespace/github-ai-ecosystem/write/repo-corrupt0303--dating-agent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58182 - "POST /namespace/github-ai-ecosystem/write/repo-aden-hive--hive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58184 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58198 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58206 - "POST /namespace/github-ai-ecosystem/write/repo-e2b-dev--E2B HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58210 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58220 - "POST /namespace/github-ai-ecosystem/write/repo-langchain-ai--langgraph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58234 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58244 - "POST /namespace/github-ai-ecosystem/write/repo-Significant-Gravitas--AutoGPT HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Researcher-3 key=analysis-by-adoption reason=Overwrite storm: 21 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58258 - "POST /namespace/github-ai-ecosystem/write/analysis-by-adoption HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58264 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58280 - "POST /namespace/github-ai-ecosystem/write/repo-yaalalabs--agent-kernel HTTP/1.1" 200 OK
+2026-05-28 13:51:09 [warning  ] poisoning.alert                agent=Researcher-3 key=verdict reason=Overwrite storm: 22 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58292 - "POST /namespace/github-ai-ecosystem/write/verdict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58302 - "POST /namespace/github-ai-ecosystem/write/repo-langgenius--dify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-3 key=activity-Researcher-3 reason=Overwrite storm: 23 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58314 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58326 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58336 - "POST /namespace/github-ai-ecosystem/write/repo-vivekchand--clawmetry HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [info     ] branch.merged                  conflicts=0 from_branch=branch/Researcher-3 merged=13 to_branch=main
+INFO:     127.0.0.1:58344 - "POST /namespace/github-ai-ecosystem/merge HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-langchain-ai--langchain our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-langchain-ai--langchain
+INFO:     127.0.0.1:58360 - "POST /namespace/github-ai-ecosystem/write/repo-langchain-ai--langchain HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58364 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-3 key=activity-Researcher-3 reason=Overwrite storm: 24 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58370 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58386 - "POST /namespace/github-ai-ecosystem/write/repo-sanikanaik456--ai-data-analysis-agent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58400 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-3 key=activity-Researcher-3 reason=Overwrite storm: 25 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58402 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-3 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-Shubhamsaboo--awesome-llm-apps our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-Shubhamsaboo--awesome-llm-apps
+INFO:     127.0.0.1:58414 - "POST /namespace/github-ai-ecosystem/write/repo-Shubhamsaboo--awesome-llm-apps HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58426 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58428 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58440 - "POST /namespace/github-ai-ecosystem/write/repo-Honore-12--NEXORA-AI HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-browser-use--browser-use our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-browser-use--browser-use
+INFO:     127.0.0.1:58448 - "POST /namespace/github-ai-ecosystem/write/repo-browser-use--browser-use HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58452 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58462 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58466 - "POST /namespace/github-ai-ecosystem/write/repo-Peuqui--AIfred-Intelligence HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-OpenBB-finance--OpenBB our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-OpenBB-finance--OpenBB
+INFO:     127.0.0.1:58468 - "POST /namespace/github-ai-ecosystem/write/repo-OpenBB-finance--OpenBB HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58482 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58504 - "POST /namespace/github-ai-ecosystem/write/repo-vitaliyfedotovpro-art--astrum-verum HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-mem0ai--mem0 our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-mem0ai--mem0
+INFO:     127.0.0.1:58516 - "POST /namespace/github-ai-ecosystem/write/repo-mem0ai--mem0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58522 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58526 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58536 - "POST /namespace/github-ai-ecosystem/write/repo-bilal0399--learn-agentic-ai HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-microsoft--qlib our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-microsoft--qlib
+INFO:     127.0.0.1:58550 - "POST /namespace/github-ai-ecosystem/write/repo-microsoft--qlib HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58560 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58572 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58582 - "POST /namespace/github-ai-ecosystem/write/repo-alfred-os--AlfredOS HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58592 - "POST /namespace/github-ai-ecosystem/write/repo-agno-agi--agno HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-2 key=analysis-by-activity reason=Overwrite storm: 21 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58602 - "POST /namespace/github-ai-ecosystem/write/analysis-by-activity HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58606 - "POST /detect-poisoning HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-2 key=verdict reason=Overwrite storm: 22 writes in 1.0s (threshold: 20) severity=medium
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=verdict our_agent=Researcher-2 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=verdict
+INFO:     127.0.0.1:58618 - "POST /namespace/github-ai-ecosystem/write/verdict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58634 - "POST /namespace/github-ai-ecosystem/write/repo-AstrBotDevs--AstrBot HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-2 key=activity-Researcher-2 reason=Overwrite storm: 23 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58646 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-2 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-1 key=analysis-by-popularity reason=Overwrite storm: 21 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58656 - "POST /namespace/github-ai-ecosystem/write/analysis-by-popularity HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=verdict our_agent=Researcher-2 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=verdict
+2026-05-28 13:51:10 [info     ] branch.merged                  conflicts=0 from_branch=branch/Researcher-2 merged=13 to_branch=main
+INFO:     127.0.0.1:58668 - "POST /namespace/github-ai-ecosystem/merge HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-1 key=verdict reason=Overwrite storm: 22 writes in 1.0s (threshold: 20) severity=medium
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=verdict our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-2
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=verdict
+INFO:     127.0.0.1:58684 - "POST /namespace/github-ai-ecosystem/write/verdict HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-2 key=activity-Researcher-2 reason=Overwrite storm: 24 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58700 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-2 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-1 key=activity-Researcher-1 reason=Overwrite storm: 23 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58706 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-1 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-2 key=activity-Researcher-2 reason=Overwrite storm: 25 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58708 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-2 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-Significant-Gravitas--AutoGPT our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-Significant-Gravitas--AutoGPT
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-langgenius--dify our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-langgenius--dify
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-langchain-ai--langchain our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-langchain-ai--langchain
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-Shubhamsaboo--awesome-llm-apps our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-Shubhamsaboo--awesome-llm-apps
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-browser-use--browser-use our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-browser-use--browser-use
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-OpenBB-finance--OpenBB our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-OpenBB-finance--OpenBB
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-mem0ai--mem0 our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-mem0ai--mem0
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=repo-microsoft--qlib our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-3
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=repo-microsoft--qlib
+2026-05-28 13:51:10 [warning  ] conflict.detected              key=verdict our_agent=Researcher-1 strategy=merge_structural their_agent=Researcher-2
+2026-05-28 13:51:10 [warning  ] conflict.rust_unavailable.fallback_dict_merge key=verdict
+2026-05-28 13:51:10 [info     ] branch.merged                  conflicts=0 from_branch=branch/Researcher-1 merged=13 to_branch=main
+INFO:     127.0.0.1:58720 - "POST /namespace/github-ai-ecosystem/merge HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-1 key=activity-Researcher-1 reason=Overwrite storm: 24 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58722 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-1 HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [warning  ] poisoning.alert                agent=Researcher-1 key=activity-Researcher-1 reason=Overwrite storm: 25 writes in 1.0s (threshold: 20) severity=medium
+INFO:     127.0.0.1:58726 - "POST /namespace/github-ai-ecosystem/write/activity-Researcher-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58740 - "POST /namespace/github-ai-ecosystem/init HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [info     ] branch.created                 branch=branch/Analyst parent=main strategy=lazy_cow
+INFO:     127.0.0.1:58754 - "POST /namespace/github-ai-ecosystem/fork HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58764 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Analyst&branch=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58768 - "POST /detect-poisoning HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58782 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Analyst&branch=branch%2FResearcher-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58784 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Analyst&branch=branch%2FResearcher-2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58794 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Analyst&branch=branch%2FResearcher-3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58808 - "POST /namespace/github-ai-ecosystem/write/analysis-statistics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58816 - "POST /namespace/github-ai-ecosystem/write/analysis-languages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58820 - "POST /namespace/github-ai-ecosystem/write/analysis-top-orgs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58824 - "POST /namespace/github-ai-ecosystem/write/analysis-topics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58836 - "POST /namespace/github-ai-ecosystem/write/analysis-best-repo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58840 - "POST /namespace/github-ai-ecosystem/write/analysis-conflict-story HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58850 - "POST /namespace/github-ai-ecosystem/write/activity-Analyst HTTP/1.1" 200 OK
+2026-05-28 13:51:10 [info     ] branch.merged                  conflicts=0 from_branch=branch/Analyst merged=7 to_branch=main
+INFO:     127.0.0.1:58852 - "POST /namespace/github-ai-ecosystem/merge HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "POST /namespace/github-ai-ecosystem/write/activity-Analyst HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58876 - "POST /namespace/github-ai-ecosystem/write/activity-Orchestrator HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58884 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Writer&branch=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58894 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Writer&branch=branch%2FResearcher-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58904 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Writer&branch=branch%2FResearcher-2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58912 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Writer&branch=branch%2FResearcher-3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58928 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Writer&branch=branch%2FAnalyst HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58930 - "POST /namespace/github-ai-ecosystem/write/report-final HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58942 - "POST /namespace/github-ai-ecosystem/write/activity-Writer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58952 - "POST /namespace/github-ai-ecosystem/write/activity-Orchestrator HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58960 - "GET /namespace/github-ai-ecosystem/snapshot?agent_id=Orchestrator&branch=main HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [13]
+INFO:     Stopping reloader process [11]

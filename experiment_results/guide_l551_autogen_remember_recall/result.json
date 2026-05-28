@@ -1,0 +1,15 @@
+{
+  "name": "guide_l551_autogen_remember_recall",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L551-L576",
+  "claim": "AgentSkeinStore.remember / recall round-trip a value",
+  "command": "(inline snippet from guide)",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0009,
+  "exit_code": null,
+  "stdout": "\u001b[2m2026-05-28 13:51:10\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mnamespace.created             \u001b[0m \u001b[36magent\u001b[0m=\u001b[35mresearcher\u001b[0m \u001b[36mnamespace\u001b[0m=\u001b[35mautogen-project\u001b[0m\nrecalled: {'v': 'Letta is stateful'}\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

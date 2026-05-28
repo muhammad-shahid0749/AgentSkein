@@ -1,0 +1,19 @@
+{"ts": 0.0001, "event": "scenario.start", "scenario": "scenario_03_branch_merge_strategies", "description": "For each of the 5 conflict strategies, two agents write the same key on independent branches and merge back to main. We verify the documented outcome holds in every case."}
+{"ts": 0.0004, "event": "strategy.setup", "strategy": "last_write_wins", "branch_a_value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "branch_b_value": {"amount": 200, "currency": "USD", "by": "agent-b"}}
+{"ts": 0.0005, "event": "strategy.merge_a_done", "strategy": "last_write_wins"}
+{"ts": 0.0007, "event": "strategy.final", "strategy": "last_write_wins", "value": {"amount": 200, "currency": "USD", "by": "agent-b"}, "raised": false}
+{"ts": 0.0009, "event": "strategy.setup", "strategy": "first_write_wins", "branch_a_value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "branch_b_value": {"amount": 200, "currency": "USD", "by": "agent-b"}}
+{"ts": 0.001, "event": "strategy.merge_a_done", "strategy": "first_write_wins"}
+{"ts": 0.0012, "event": "strategy.final", "strategy": "first_write_wins", "value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "raised": false}
+{"ts": 0.0015, "event": "strategy.setup", "strategy": "merge_structural", "branch_a_value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "branch_b_value": {"amount": 200, "currency": "USD", "by": "agent-b"}}
+{"ts": 0.0016, "event": "strategy.merge_a_done", "strategy": "merge_structural"}
+{"ts": 0.0018, "event": "strategy.final", "strategy": "merge_structural", "value": {"amount": 200, "currency": "USD", "by": "agent-b"}, "raised": false}
+{"ts": 0.002, "event": "strategy.setup", "strategy": "merge_semantic", "branch_a_value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "branch_b_value": {"amount": 200, "currency": "USD", "by": "agent-b"}}
+{"ts": 0.0021, "event": "strategy.merge_a_done", "strategy": "merge_semantic"}
+{"ts": 0.0023, "event": "strategy.final", "strategy": "merge_semantic", "value": {"amount": 200, "currency": "USD", "by": "agent-b"}, "raised": false}
+{"ts": 0.0025, "event": "strategy.setup", "strategy": "raise", "branch_a_value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "branch_b_value": {"amount": 200, "currency": "USD", "by": "agent-b"}}
+{"ts": 0.0026, "event": "strategy.merge_a_done", "strategy": "raise"}
+{"ts": 0.0027, "event": "strategy.conflict_raised", "strategy": "raise", "ours": {"amount": 200, "currency": "USD", "by": "agent-b"}, "theirs": {"amount": 100, "currency": "USD", "by": "agent-a"}}
+{"ts": 0.0027, "event": "strategy.final", "strategy": "raise", "value": {"amount": 100, "currency": "USD", "by": "agent-a"}, "raised": true}
+{"ts": 0.0028, "event": "scenario.outcome", "passed": true, "summary": "- `last_write_wins` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `first_write_wins` \u2192 final={'amount': 100, 'currency': 'USD', 'by': 'agent-a'} raised=False expectation_met=True\n- `merge_structural` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `merge_semantic` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `raise` \u2192 final={'amount': 100, 'currency': 'USD', 'by': 'agent-a'} raised=True expectation_met=True", "claim": "All 5 conflict strategies produce the documented outcome.", "metrics": {"strategies_tested": 5, "strategies_passing": 5}}
+{"ts": 0.0028, "event": "scenario.end", "duration_s": 0.0028}

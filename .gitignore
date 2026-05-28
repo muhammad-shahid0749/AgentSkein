@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+.venv/
+target/
+dist/
+*.egg-info/
+.env
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+agentskein.db
+*.whl
+internal_docs/

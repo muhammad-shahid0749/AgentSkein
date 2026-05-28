@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-8.2.2, pluggy-1.6.0 -- /usr/local/bin/python
+rootdir: /app
+plugins: anyio-4.3.0, asyncio-0.23.8
+asyncio: mode=Mode.STRICT
+collecting ... collected 5 items
+
+tests/integration/test_redis_backend.py::test_save_and_get_namespace SKIPPED [ 20%]
+tests/integration/test_redis_backend.py::test_save_and_get_entry SKIPPED [ 40%]
+tests/integration/test_redis_backend.py::test_cow_fallthrough_redis SKIPPED [ 60%]
+tests/integration/test_redis_backend.py::test_distributed_lock_redis SKIPPED [ 80%]
+tests/integration/test_redis_backend.py::test_branch_entries_ordered SKIPPED [100%]
+
+============================== 5 skipped in 0.16s ==============================

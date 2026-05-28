@@ -1,0 +1,52 @@
+{
+  "runs": [
+    {
+      "scenario": "scenario_01_multi_writer_race",
+      "passed": true,
+      "claim": "AgentSkein detects concurrent writes via vector clocks and keeps an audit trail; naive backends silently lose 4 of 5 writers.",
+      "summary": "Plain dict: 1/5 writes survived (4/5 lost silently, survivor=['agent-2']).\n\nNaive Redis: 1/5 writes survived (4/5 lost silently, survivor=['agent-5']).\n\nAgentSkein: 5/5 writers preserved as disjoint keys, shared 'market-size' resolved to chosen_by=['agent-5'], conflict detected via vector clocks.",
+      "metrics": {
+        "plain_dict_writes_surviving": 1,
+        "naive_redis_writes_surviving": 1,
+        "agentskein_writes_surviving": 5
+      },
+      "duration_s": 0.0204
+    },
+    {
+      "scenario": "scenario_02_disjoint_pipeline",
+      "passed": true,
+      "claim": "Disjoint top-level keys are unioned cleanly by the 3-way merge engine; all 3 writers' contributions are preserved on main.",
+      "summary": "3/3 perspectives preserved on main.",
+      "metrics": {
+        "perspectives_preserved": 3,
+        "perspectives_expected": 3,
+        "attribution_ok": true
+      },
+      "duration_s": 0.0012
+    },
+    {
+      "scenario": "scenario_03_branch_merge_strategies",
+      "passed": true,
+      "claim": "All 5 conflict strategies produce the documented outcome.",
+      "summary": "5/5 strategies behave as documented.",
+      "metrics": {
+        "strategies_tested": 5,
+        "strategies_passing": 5
+      },
+      "duration_s": 0.0031
+    },
+    {
+      "scenario": "scenario_04_poisoning_defence",
+      "passed": true,
+      "claim": "PoisoningDetector blocks injection payloads with severity=high and flags overwrite storms with severity=medium; benign writes pass through unflagged.",
+      "summary": "Blocked 6/6 injection payloads, 0 false positives, storm alerts=5.",
+      "metrics": {
+        "injections_blocked": 6,
+        "injections_total": 6,
+        "benign_false_positives": 0,
+        "storm_alerts_observed": 5
+      },
+      "duration_s": 0.0013
+    }
+  ]
+}

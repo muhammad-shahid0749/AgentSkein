@@ -1,0 +1,14 @@
+{"ts": 0.0001, "event": "scenario.start", "scenario": "scenario_04_poisoning_defence", "description": "We push 6 injection payloads + 3 benign writes through PoisoningDetector and then trigger an overwrite storm. We verify the detector flags exactly the adversarial inputs."}
+{"ts": 0.0002, "event": "wave1.injection", "key": "inj.1", "blocked": true, "alert_count": 1, "first_alert_reason": "Prompt injection pattern detected: ignore\\s+(all\\s+)?previous\\s+instructions"}
+{"ts": 0.0003, "event": "wave1.injection", "key": "inj.2", "blocked": true, "alert_count": 2, "first_alert_reason": "Prompt injection pattern detected: disregard\\s+(all\\s+)?prior\\s+(instructions|context)"}
+{"ts": 0.0003, "event": "wave1.injection", "key": "inj.3", "blocked": true, "alert_count": 1, "first_alert_reason": "Prompt injection pattern detected: <\\|system\\|>"}
+{"ts": 0.0004, "event": "wave1.injection", "key": "inj.4", "blocked": true, "alert_count": 1, "first_alert_reason": "Prompt injection pattern detected: \\[INST\\]|\\[/INST\\]"}
+{"ts": 0.0005, "event": "wave1.injection", "key": "inj.5", "blocked": true, "alert_count": 1, "first_alert_reason": "Prompt injection pattern detected: you\\s+are\\s+now\\s+(a|an)\\s+"}
+{"ts": 0.0005, "event": "wave1.injection", "key": "inj.6", "blocked": true, "alert_count": 1, "first_alert_reason": "Prompt injection pattern detected: ###\\s*Human:|###\\s*Assistant:"}
+{"ts": 0.0005, "event": "wave1.benign", "key": "ok.1", "flagged": false, "alert_count": 0}
+{"ts": 0.0006, "event": "wave1.benign", "key": "ok.2", "flagged": false, "alert_count": 0}
+{"ts": 0.0006, "event": "wave1.benign", "key": "ok.3", "flagged": false, "alert_count": 0}
+{"ts": 0.0006, "event": "wave2.storm.start", "threshold": 20}
+{"ts": 0.0009, "event": "wave2.storm.complete", "storm_alerts_seen": 5}
+{"ts": 0.0009, "event": "scenario.outcome", "passed": true, "summary": "Injection wave: 6/6 blocked. Benign wave: 0 false positives (should be 0). Storm wave: 5 medium alerts (\u22651 expected).", "claim": "PoisoningDetector blocks injection payloads with severity=high and flags overwrite storms with severity=medium; benign writes pass through unflagged.", "metrics": {"injections_blocked": 6, "injections_total": 6, "benign_false_positives": 0, "benign_total": 3, "storm_alerts_observed": 5}}
+{"ts": 0.0009, "event": "scenario.end", "duration_s": 0.0009}

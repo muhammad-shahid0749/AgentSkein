@@ -1,0 +1,13 @@
+{
+  "scenario": "scenario_03_branch_merge_strategies",
+  "description": "For each of the 5 conflict strategies, two agents write the same key on independent branches and merge back to main. We verify the documented outcome holds in every case.",
+  "duration_s": 0.0028,
+  "event_count": 19,
+  "passed": true,
+  "summary": "- `last_write_wins` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `first_write_wins` \u2192 final={'amount': 100, 'currency': 'USD', 'by': 'agent-a'} raised=False expectation_met=True\n- `merge_structural` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `merge_semantic` \u2192 final={'amount': 200, 'currency': 'USD', 'by': 'agent-b'} raised=False expectation_met=True\n- `raise` \u2192 final={'amount': 100, 'currency': 'USD', 'by': 'agent-a'} raised=True expectation_met=True",
+  "claim": "All 5 conflict strategies produce the documented outcome.",
+  "metrics": {
+    "strategies_tested": 5,
+    "strategies_passing": 5
+  }
+}

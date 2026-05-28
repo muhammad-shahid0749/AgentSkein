@@ -1,0 +1,15 @@
+{
+  "name": "readme_l9_license_file_present",
+  "source_doc": "README.md",
+  "source_lines": "L9, L523",
+  "claim": "LICENSE file exists at repo root (Apache-2.0 promised)",
+  "command": "(static file check)",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

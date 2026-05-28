@@ -1,0 +1,16 @@
+{
+  "scenario": "scenario_02_disjoint_pipeline",
+  "description": "Three researcher agents each write a finding to a unique top-level key (analysis-by-popularity / analysis-by-activity / analysis-by-adoption) on their own branch, then merge to main.",
+  "duration_s": 0.001,
+  "event_count": 10,
+  "passed": true,
+  "summary": "All 3 disjoint keys present on main: ['analysis-by-activity', 'analysis-by-adoption', 'analysis-by-popularity']. Missing: none. Attribution intact: True.",
+  "claim": "Disjoint top-level keys are unioned cleanly by the 3-way merge engine; all 3 writers' contributions are preserved on main.",
+  "metrics": {
+    "writers": 3,
+    "perspectives_preserved": 3,
+    "perspectives_expected": 3,
+    "attribution_ok": true,
+    "total_keys_on_main": 3
+  }
+}

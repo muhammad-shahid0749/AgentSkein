@@ -1,0 +1,10 @@
+2026-05-28 13:51:07 [info     ] namespace.created              agent=agent-A namespace=task-1
+2026-05-28 13:51:07 [info     ] branch.created                 branch=branch-A parent=main strategy=lazy_cow
+2026-05-28 13:51:07 [info     ] branch.created                 branch=branch-B parent=main strategy=lazy_cow
+2026-05-28 13:51:07 [info     ] branch.merged                  conflicts=0 from_branch=branch-A merged=1 to_branch=main
+2026-05-28 13:51:07 [info     ] branch.merged                  conflicts=0 from_branch=branch-B merged=1 to_branch=main
+Keys on main after both merges: 2
+  finding-from-A: {'source': 'arxiv', 'topic': 'CRDT'}
+  finding-from-B: {'source': 'neurips', 'topic': 'vector clocks'}
+
+Quickstart PASSED: both findings present on main, zero data loss.

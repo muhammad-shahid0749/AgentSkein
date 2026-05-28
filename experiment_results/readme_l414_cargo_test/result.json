@@ -1,0 +1,15 @@
+{
+  "name": "readme_l414_cargo_test",
+  "source_doc": "README.md",
+  "source_lines": "L413-L415",
+  "claim": "`cargo test --manifest-path core/Cargo.toml` passes",
+  "command": "cargo test --manifest-path core/Cargo.toml",
+  "status": "skipped",
+  "skip_reason": "cargo not on PATH (install Rust via rustup)",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

@@ -1,0 +1,20 @@
+{
+  "name": "readme_l422_project_layout_paths_exist",
+  "source_doc": "README.md",
+  "source_lines": "L420-L447",
+  "claim": "every path quoted in the project layout exists in the repo",
+  "command": "(static path check)",
+  "status": "fail",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "missing paths: ['agentskein_paper.tex']",
+  "extra": {
+    "expected": 21,
+    "missing": [
+      "agentskein_paper.tex"
+    ]
+  }
+}

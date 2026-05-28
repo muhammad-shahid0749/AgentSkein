@@ -1,0 +1,18 @@
+
+Traceback (most recent call last):
+  File "/app/tests/experiments/_experiment.py", line 207, in run_callable
+    ret = asyncio.run(func())
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/app/tests/experiments/experiments_guide.py", line 381, in run
+    await store.put(agent_id="planner", key="plan-step-3", value={"step": 1})
+          ^^^^^^^^^
+AttributeError: 'AgentSkeinStore' object has no attribute 'put'

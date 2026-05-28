@@ -1,0 +1,25 @@
+[package]
+name = "agentskein-core"
+version = "0.1.0"
+edition = "2021"
+# Don't auto-discover benches/ -- it's not committed for the public release.
+autobenches = false
+
+[lib]
+name = "_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = { version = "0.21", features = ["extension-module"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.8", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "1.0"
+
+# NOTE: criterion + a [[bench]] target lived here previously, but the
+# benches/ directory was never checked in. Cargo refuses to parse a
+# manifest that declares a missing bench file, so the declaration is
+# removed for the public release. Re-add criterion under
+# [dev-dependencies] and reintroduce [[bench]] once
+# benches/merge_bench.rs is committed.

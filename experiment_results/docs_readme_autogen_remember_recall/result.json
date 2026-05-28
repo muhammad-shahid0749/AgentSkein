@@ -1,0 +1,15 @@
+{
+  "name": "docs_readme_autogen_remember_recall",
+  "source_doc": "docs/README.md",
+  "source_lines": "L110-L118",
+  "claim": "store.remember(...) / store.recall(...) round-trip on AgentSkeinStore",
+  "command": "(inline snippet from docs/README.md \u2014 fixed)",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0002,
+  "exit_code": null,
+  "stdout": "\u001b[2m2026-05-28 13:51:10\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mnamespace.created             \u001b[0m \u001b[36magent\u001b[0m=\u001b[35mplanner\u001b[0m \u001b[36mnamespace\u001b[0m=\u001b[35mmy-team\u001b[0m\nrecalled by executor: {'step': 1}\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

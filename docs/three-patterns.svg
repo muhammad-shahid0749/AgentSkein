@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 640" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="550" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">The three concurrent-write patterns — pick what fits your semantics</text>
+
+  <!-- ===== Pattern A ===== -->
+  <rect x="30" y="70" width="340" height="540" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="200" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#064e3b">Pattern A — DISJOINT KEYS</text>
+  <text x="200" y="116" text-anchor="middle" font-size="11" fill="#065f46">Use this when you want EVERY writer preserved.</text>
+
+  <!-- Three agents -->
+  <g font-size="11" text-anchor="middle">
+    <rect x="55" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#059669"/>
+    <text x="100" y="160">Researcher-1</text>
+    <rect x="155" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#059669"/>
+    <text x="200" y="160">Researcher-2</text>
+    <rect x="255" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#059669"/>
+    <text x="300" y="160">Researcher-3</text>
+  </g>
+
+  <!-- writes -->
+  <g font-family="ui-monospace,Consolas,Menlo,monospace" font-size="10.5" fill="#0f172a">
+    <text x="200" y="200" text-anchor="middle">write("analysis-by-popularity", ...)</text>
+    <text x="200" y="216" text-anchor="middle">write("analysis-by-activity",   ...)</text>
+    <text x="200" y="232" text-anchor="middle">write("analysis-by-adoption",   ...)</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#059669" stroke-width="2" fill="none" marker-end="url(#ar2)">
+    <line x1="100" y1="247" x2="100" y2="280"/>
+    <line x1="200" y1="247" x2="200" y2="280"/>
+    <line x1="300" y1="247" x2="300" y2="280"/>
+  </g>
+
+  <!-- merge engine -->
+  <rect x="50" y="285" width="300" height="40" rx="8" fill="#a7f3d0" stroke="#059669"/>
+  <text x="200" y="310" text-anchor="middle" font-size="12" font-weight="700" fill="#064e3b">3-way merge engine (disjoint = clean union)</text>
+
+  <!-- main result -->
+  <line x1="200" y1="328" x2="200" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#ar2)"/>
+  <rect x="50" y="365" width="300" height="180" rx="10" fill="#fff" stroke="#059669"/>
+  <text x="200" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">main snapshot — ALL three present</text>
+  <g font-family="ui-monospace,Consolas,Menlo,monospace" font-size="10.5" fill="#0f172a">
+    <text x="65" y="410">analysis-by-popularity = {by_agent: "R1", ...}</text>
+    <text x="65" y="428">analysis-by-activity   = {by_agent: "R2", ...}</text>
+    <text x="65" y="446">analysis-by-adoption   = {by_agent: "R3", ...}</text>
+  </g>
+  <text x="200" y="479" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">3 / 3 preserved — zero data loss</text>
+  <text x="200" y="497" text-anchor="middle" font-size="11" fill="#065f46">Vector clocks see no concurrency on these keys</text>
+  <text x="200" y="513" text-anchor="middle" font-size="11" fill="#065f46">→ no conflict, no strategy invoked</text>
+  <text x="200" y="535" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">[ verifiable: by_agent matches owner ]</text>
+
+  <text x="200" y="580" text-anchor="middle" font-size="11" font-style="italic" fill="#065f46">Use Pattern A when each writer's view has value on its own.</text>
+  <text x="200" y="596" text-anchor="middle" font-size="11" font-style="italic" fill="#065f46">Example: parallel research with different metrics.</text>
+
+  <!-- ===== Pattern B ===== -->
+  <rect x="390" y="70" width="340" height="540" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="560" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#7c2d12">Pattern B — SHARED SAME-KEY</text>
+  <text x="560" y="116" text-anchor="middle" font-size="11" fill="#9a3412">Use this when you want ONE value + audit trail.</text>
+
+  <g font-size="11" text-anchor="middle">
+    <rect x="415" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#ea580c"/>
+    <text x="460" y="160">Researcher-1</text>
+    <rect x="515" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#ea580c"/>
+    <text x="560" y="160">Researcher-2</text>
+    <rect x="615" y="135" width="90" height="42" rx="8" fill="#fff" stroke="#ea580c"/>
+    <text x="660" y="160">Researcher-3</text>
+  </g>
+
+  <g font-family="ui-monospace,Consolas,Menlo,monospace" font-size="10.5" fill="#0f172a">
+    <text x="560" y="200" text-anchor="middle">write("verdict", {winner: "AutoGPT", ...})</text>
+    <text x="560" y="216" text-anchor="middle">write("verdict", {winner: "Plugins",  ...})</text>
+    <text x="560" y="232" text-anchor="middle">write("verdict", {winner: "AutoGPT", ...})</text>
+  </g>
+
+  <g stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#ar2)">
+    <line x1="460" y1="247" x2="460" y2="280"/>
+    <line x1="560" y1="247" x2="560" y2="280"/>
+    <line x1="660" y1="247" x2="660" y2="280"/>
+  </g>
+
+  <rect x="410" y="285" width="300" height="40" rx="8" fill="#fed7aa" stroke="#ea580c"/>
+  <text x="560" y="310" text-anchor="middle" font-size="12" font-weight="700" fill="#7c2d12">Vector clocks detect concurrency</text>
+
+  <line x1="560" y1="328" x2="560" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#ar2)"/>
+  <rect x="410" y="365" width="300" height="180" rx="10" fill="#fff" stroke="#ea580c"/>
+  <text x="560" y="388" text-anchor="middle" font-size="12" font-weight="700" fill="#9a3412">main snapshot — single survivor + audit</text>
+  <g font-family="ui-monospace,Consolas,Menlo,monospace" font-size="10.5" fill="#0f172a">
+    <text x="425" y="410">verdict = {</text>
+    <text x="445" y="427">  winner:     "AutoGPT",</text>
+    <text x="445" y="444">  chosen_by:  "Researcher-3",</text>
+    <text x="445" y="461">  vector_clock: {R1:1, R2:1, R3:1}</text>
+    <text x="425" y="478">}</text>
+  </g>
+  <text x="560" y="503" text-anchor="middle" font-size="12" font-weight="700" fill="#9a3412">Conflict DETECTED (not silent)</text>
+  <text x="560" y="521" text-anchor="middle" font-size="11" fill="#9a3412">5 strategies: structural, semantic (LLM),</text>
+  <text x="560" y="535" text-anchor="middle" font-size="11" fill="#9a3412">LWW, FWW, raise (HTTP 409)</text>
+
+  <text x="560" y="580" text-anchor="middle" font-size="11" font-style="italic" fill="#9a3412">Use Pattern B when only one value should land on main</text>
+  <text x="560" y="596" text-anchor="middle" font-size="11" font-style="italic" fill="#9a3412">but you still want to know who tried and lost.</text>
+
+  <!-- ===== Pattern C ===== -->
+  <rect x="750" y="70" width="320" height="540" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="910" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1e3a8a">Pattern C — REPO OVERLAPS</text>
+  <text x="910" y="116" text-anchor="middle" font-size="11" fill="#1d4ed8">Multiple writers hit the same key by chance.</text>
+
+  <g font-size="11" text-anchor="middle">
+    <rect x="785" y="135" width="100" height="42" rx="8" fill="#fff" stroke="#3b82f6"/>
+    <text x="835" y="160">Researcher-1</text>
+    <rect x="935" y="135" width="100" height="42" rx="8" fill="#fff" stroke="#3b82f6"/>
+    <text x="985" y="160">Researcher-3</text>
+  </g>
+  <text x="910" y="195" text-anchor="middle" font-size="11" font-family="ui-monospace,Consolas,Menlo,monospace" fill="#0f172a">both write("repo-AutoGPT", {...})</text>
+  <text x="910" y="213" text-anchor="middle" font-size="10.5" fill="#1d4ed8">(same library popped up in both their searches)</text>
+
+  <g stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#ar2)">
+    <line x1="835" y1="225" x2="835" y2="265"/>
+    <line x1="985" y1="225" x2="985" y2="265"/>
+  </g>
+
+  <rect x="770" y="270" width="280" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="910" y="295" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Structural merge per repo dict</text>
+
+  <line x1="910" y1="313" x2="910" y2="345" stroke="#374151" stroke-width="2" marker-end="url(#ar2)"/>
+  <rect x="770" y="350" width="280" height="200" rx="10" fill="#fff" stroke="#3b82f6"/>
+  <text x="910" y="373" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">main snapshot</text>
+  <g font-family="ui-monospace,Consolas,Menlo,monospace" font-size="10.5" fill="#0f172a">
+    <text x="785" y="395">repo-AutoGPT = {</text>
+    <text x="805" y="412">  name: "...AutoGPT",</text>
+    <text x="805" y="429">  stars: 184213,        ← unchanged</text>
+    <text x="805" y="446">  forks: 46238,         ← unchanged</text>
+    <text x="805" y="463">  ranked_by: "ADOPTION",</text>
+    <text x="805" y="480">  found_by:  "R3"       ← survivor</text>
+    <text x="785" y="497">}</text>
+  </g>
+  <text x="910" y="525" text-anchor="middle" font-size="11" fill="#1d4ed8">Non-overlapping fields union;</text>
+  <text x="910" y="540" text-anchor="middle" font-size="11" fill="#1d4ed8">overlapping fields LWW with audit.</text>
+
+  <text x="910" y="580" text-anchor="middle" font-size="11" font-style="italic" fill="#1d4ed8">Pattern C is what you get for free when</text>
+  <text x="910" y="596" text-anchor="middle" font-size="11" font-style="italic" fill="#1d4ed8">two writers happen to collide on a dict key.</text>
+</svg>

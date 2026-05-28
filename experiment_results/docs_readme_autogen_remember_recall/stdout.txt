@@ -1,0 +1,2 @@
+[2m2026-05-28 13:51:10[0m [[32m[1minfo     [0m] [1mnamespace.created             [0m [36magent[0m=[35mplanner[0m [36mnamespace[0m=[35mmy-team[0m
+recalled by executor: {'step': 1}

@@ -1,0 +1,15 @@
+{
+  "name": "readme_l122_quickstart_inline",
+  "source_doc": "README.md",
+  "source_lines": "L112-L151",
+  "claim": "quickstart code preserves both finding-from-A and finding-from-B on main",
+  "command": "(inline equivalent of `python quickstart.py`)",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0007,
+  "exit_code": null,
+  "stdout": "\u001b[2m2026-05-28 13:51:06\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mnamespace.created             \u001b[0m \u001b[36magent\u001b[0m=\u001b[35magent-A\u001b[0m \u001b[36mnamespace\u001b[0m=\u001b[35mtask-1\u001b[0m\n\u001b[2m2026-05-28 13:51:06\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mbranch.created                \u001b[0m \u001b[36mbranch\u001b[0m=\u001b[35mbranch-A\u001b[0m \u001b[36mparent\u001b[0m=\u001b[35mmain\u001b[0m \u001b[36mstrategy\u001b[0m=\u001b[35mlazy_cow\u001b[0m\n\u001b[2m2026-05-28 13:51:06\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mbranch.created                \u001b[0m \u001b[36mbranch\u001b[0m=\u001b[35mbranch-B\u001b[0m \u001b[36mparent\u001b[0m=\u001b[35mmain\u001b[0m \u001b[36mstrategy\u001b[0m=\u001b[35mlazy_cow\u001b[0m\n\u001b[2m2026-05-28 13:51:06\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mbranch.merged                 \u001b[0m \u001b[36mconflicts\u001b[0m=\u001b[35m0\u001b[0m \u001b[36mfrom_branch\u001b[0m=\u001b[35mbranch-A\u001b[0m \u001b[36mmerged\u001b[0m=\u001b[35m1\u001b[0m \u001b[36mto_branch\u001b[0m=\u001b[35mmain\u001b[0m\n\u001b[2m2026-05-28 13:51:06\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mbranch.merged                 \u001b[0m \u001b[36mconflicts\u001b[0m=\u001b[35m0\u001b[0m \u001b[36mfrom_branch\u001b[0m=\u001b[35mbranch-B\u001b[0m \u001b[36mmerged\u001b[0m=\u001b[35m1\u001b[0m \u001b[36mto_branch\u001b[0m=\u001b[35mmain\u001b[0m\n  finding-from-A: {'source': 'arxiv', 'topic': 'CRDT'}\n  finding-from-B: {'source': 'neurips', 'topic': 'vector clocks'}\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

@@ -1,0 +1,29 @@
+{
+  "name": "guide_branches_list",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L398",
+  "claim": "GET /namespace/{ns}/branches lists all branches",
+  "command": "curl http://localhost:8765/namespace/fork-test/branches",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "status_code": 200,
+    "body": {
+      "namespace": "fork-test",
+      "branches": [
+        {
+          "name": "main",
+          "parent_branch": "main",
+          "created_by": "coord",
+          "is_merged": false
+        }
+      ],
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,97 @@
+# =============================================================================
+#  AgentSkein stack — same file works on Windows Docker Desktop and Ubuntu.
+#
+#  Three services:
+#    redis        Redis 7 (production backend for AgentSkein)
+#    api          AgentSkein FastAPI server on :8765 (uses Redis above)
+#    test-runner  Runs the real-world test scenarios and writes structured
+#                 results (JSONL + Markdown) to ./test_results on the host.
+#
+#  Quick start:
+#    docker compose up redis api -d          # start the stack
+#    docker compose run --rm test-runner     # run the scenarios
+#    cat ./test_results/run_summary.md       # read the summary
+#
+#  Stop:
+#    docker compose down
+# =============================================================================
+services:
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: agentskein-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agentskein-api
+    ports:
+      - "8765:8765"
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      USE_REDIS: "true"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "http://localhost:8765/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agentskein-tests
+    # The runner reaches the API by service name and writes to /results,
+    # which is bind-mounted from the host so you can read the artifacts.
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      AGENTSKEIN_API_URL: http://api:8765
+      AGENTSKEIN_RESULTS_DIR: /results
+      AGENTSKEIN_EXPERIMENT_RESULTS_DIR: /experiment_results
+    volumes:
+      # Per-suite result mounts (host can read after the run).
+      - ./test_results:/results
+      - ./experiment_results:/experiment_results
+      # Bind-mount the live source tree for tests/, quickstart.py, examples/,
+      # and agents/ so edits on the host take effect on the next
+      # `docker compose run --rm test-runner ...` — no image rebuild needed.
+      # Read-only so the container can't accidentally write back.
+      - ./tests:/app/tests:ro
+      - ./quickstart.py:/app/quickstart.py:ro
+      - ./examples:/app/examples:ro
+      - ./agents:/app/agents
+      # Bind-mount docs + README so the project-layout audit and the link
+      # checks always run against the live docs, no rebuild required.
+      - ./README.md:/app/README.md:ro
+      - ./CONTEXT.md:/app/CONTEXT.md:ro
+      - ./AGENTS_INTEGRATION_GUIDE.md:/app/AGENTS_INTEGRATION_GUIDE.md:ro
+      - ./LICENSE:/app/LICENSE:ro
+      - ./docs:/app/docs:ro
+    depends_on:
+      api:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # Default command runs the real-world scenarios. Override on the CLI
+    # to run the doc-experiments harness:
+    #   docker compose run --rm test-runner \
+    #       python tests/experiments/run_all_experiments.py
+    command: ["python", "tests/scenarios/run_all_scenarios.py"]
+
+volumes:
+  redis-data:

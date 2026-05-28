@@ -1,0 +1,15 @@
+{
+  "name": "docs_readme_autogen_put_get_broken",
+  "source_doc": "docs/README.md",
+  "source_lines": "L110-L118",
+  "claim": "store.put(...) / store.get(...) work on AgentSkeinStore (THEY DO NOT)",
+  "command": "(inline snippet from docs/README.md \u2014 expected to fail)",
+  "status": "fail",
+  "skip_reason": "",
+  "duration_s": 0.0004,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "\nTraceback (most recent call last):\n  File \"/app/tests/experiments/_experiment.py\", line 207, in run_callable\n    ret = asyncio.run(func())\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/runners.py\", line 195, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/base_events.py\", line 691, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/app/tests/experiments/experiments_guide.py\", line 381, in run\n    await store.put(agent_id=\"planner\", key=\"plan-step-3\", value={\"step\": 1})\n          ^^^^^^^^^\nAttributeError: 'AgentSkeinStore' object has no attribute 'put'\n",
+  "error": "AttributeError: 'AgentSkeinStore' object has no attribute 'put'",
+  "extra": {}
+}

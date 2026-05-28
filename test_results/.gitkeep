@@ -1,0 +1,3 @@
+# Bind-mount target for docker-compose test-runner.
+# Scenario output (events.jsonl, result.json, summary.md, run_summary.md) is
+# written here by tests/scenarios/run_all_scenarios.py and is not committed.

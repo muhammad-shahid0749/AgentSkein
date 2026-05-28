@@ -1,0 +1,24 @@
+{"ts": 0.0001, "event": "scenario.start", "scenario": "scenario_01_multi_writer_race", "description": "Five agents race to write the same shared key 'market-size'. We compare plain dict / naive Redis / AgentSkein and count how many writers survive on the final state."}
+{"ts": 0.0001, "event": "plain_dict.start"}
+{"ts": 0.0013, "event": "plain_dict.write", "agent": "agent-3", "value": "$2.3B"}
+{"ts": 0.0013, "event": "plain_dict.write", "agent": "agent-5", "value": "$2.6B"}
+{"ts": 0.0024, "event": "plain_dict.write", "agent": "agent-4", "value": "$1.9B"}
+{"ts": 0.0035, "event": "plain_dict.write", "agent": "agent-1", "value": "$2.1B"}
+{"ts": 0.0046, "event": "plain_dict.write", "agent": "agent-2", "value": "$2.4B"}
+{"ts": 0.0046, "event": "plain_dict.final", "value": "$2.4B", "survivors": ["agent-2"]}
+{"ts": 0.0087, "event": "naive_redis.start", "url": "redis://redis:6379/0"}
+{"ts": 0.0101, "event": "naive_redis.write", "agent": "agent-2", "value": "$2.4B"}
+{"ts": 0.0123, "event": "naive_redis.write", "agent": "agent-4", "value": "$1.9B"}
+{"ts": 0.0124, "event": "naive_redis.write", "agent": "agent-1", "value": "$2.1B"}
+{"ts": 0.0136, "event": "naive_redis.write", "agent": "agent-3", "value": "$2.3B"}
+{"ts": 0.0137, "event": "naive_redis.write", "agent": "agent-5", "value": "$2.6B"}
+{"ts": 0.0139, "event": "naive_redis.final", "value": "$2.6B", "survivors": ["agent-5"]}
+{"ts": 0.0139, "event": "agentskein.start"}
+{"ts": 0.0157, "event": "agentskein.merge", "agent": "agent-2", "merged_keys": ["market-size", "by-agent-2"], "conflict_keys": []}
+{"ts": 0.0174, "event": "agentskein.merge", "agent": "agent-4", "merged_keys": ["market-size", "by-agent-4"], "conflict_keys": []}
+{"ts": 0.0179, "event": "agentskein.merge", "agent": "agent-1", "merged_keys": ["market-size", "by-agent-1"], "conflict_keys": []}
+{"ts": 0.0194, "event": "agentskein.merge", "agent": "agent-3", "merged_keys": ["market-size", "by-agent-3"], "conflict_keys": []}
+{"ts": 0.0198, "event": "agentskein.merge", "agent": "agent-5", "merged_keys": ["market-size", "by-agent-5"], "conflict_keys": []}
+{"ts": 0.0199, "event": "agentskein.final", "market_size": {"estimate": "$2.6B", "chosen_by": "agent-5"}, "per_agent_keys_preserved": ["by-agent-2", "by-agent-4", "by-agent-1", "by-agent-3", "by-agent-5"], "total_keys": 6}
+{"ts": 0.0199, "event": "scenario.outcome", "passed": true, "summary": "Plain dict: 1/5 writes survived (4/5 lost silently, survivor=['agent-2']).\n\nNaive Redis: 1/5 writes survived (4/5 lost silently, survivor=['agent-5']).\n\nAgentSkein: 5/5 writers preserved as disjoint keys, shared 'market-size' resolved to chosen_by=['agent-5'], conflict detected via vector clocks.", "claim": "AgentSkein detects concurrent writes via vector clocks and keeps an audit trail; naive backends silently lose 4 of 5 writers.", "metrics": {"plain_dict_writes_surviving": 1, "naive_redis_writes_surviving": 1, "agentskein_writes_surviving": 5, "agentskein_conflict_detected": true, "agentskein_audit_trail": true, "writers": 5}}
+{"ts": 0.0199, "event": "scenario.end", "duration_s": 0.0199}

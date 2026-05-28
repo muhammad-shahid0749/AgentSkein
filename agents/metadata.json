@@ -1,0 +1,6 @@
+{
+  "name": "AgentSkein Multi-Agent System",
+  "description": "A production-quality multi-agent system demonstration using AgentSkein for conflict-free shared memory and zero data loss.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

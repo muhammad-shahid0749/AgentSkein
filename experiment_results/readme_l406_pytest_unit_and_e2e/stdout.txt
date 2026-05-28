@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-8.2.2, pluggy-1.6.0 -- /usr/local/bin/python
+rootdir: /app
+plugins: anyio-4.3.0, asyncio-0.23.8
+asyncio: mode=Mode.STRICT
+collecting ... collected 44 items
+
+tests/unit/test_client_inmemory.py::test_basic_write_and_read PASSED     [  2%]
+tests/unit/test_client_inmemory.py::test_write_updates_local_clock PASSED [  4%]
+tests/unit/test_client_inmemory.py::test_read_updates_local_clock PASSED [  6%]
+tests/unit/test_client_inmemory.py::test_no_conflict_causal_sequence PASSED [  9%]
+tests/unit/test_client_inmemory.py::test_conflict_raises_with_raise_strategy PASSED [ 11%]
+tests/unit/test_client_inmemory.py::test_conflict_last_write_wins PASSED [ 13%]
+tests/unit/test_client_inmemory.py::test_conflict_first_write_wins PASSED [ 15%]
+tests/unit/test_client_inmemory.py::test_structural_merge_no_rust PASSED [ 18%]
+tests/unit/test_client_inmemory.py::test_fork_and_read_parent_entry PASSED [ 20%]
+tests/unit/test_client_inmemory.py::test_fork_write_does_not_affect_parent PASSED [ 22%]
+tests/unit/test_client_inmemory.py::test_merge_to_main PASSED            [ 25%]
+tests/unit/test_client_inmemory.py::test_snapshot PASSED                 [ 27%]
+tests/unit/test_client_inmemory.py::test_delete PASSED                   [ 29%]
+tests/unit/test_client_inmemory.py::test_context_manager PASSED          [ 31%]
+tests/unit/test_client_inmemory.py::test_embedding_fn_called_on_write PASSED [ 34%]
+tests/unit/test_client_inmemory.py::test_semantic_merge_uses_llm PASSED  [ 36%]
+tests/unit/test_memory_backend.py::test_save_and_get_entry PASSED        [ 38%]
+tests/unit/test_memory_backend.py::test_missing_entry_returns_none PASSED [ 40%]
+tests/unit/test_memory_backend.py::test_delete_entry PASSED              [ 43%]
+tests/unit/test_memory_backend.py::test_cow_fallthrough_to_parent PASSED [ 45%]
+tests/unit/test_memory_backend.py::test_cow_child_write_shadows_parent PASSED [ 47%]
+tests/unit/test_memory_backend.py::test_distributed_lock_acquire_release PASSED [ 50%]
+tests/unit/test_memory_backend.py::test_lock_wrong_token_fails PASSED    [ 52%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_clean_write_no_alerts PASSED [ 54%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_prompt_injection_detected PASSED [ 56%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_injection_variant_disregard PASSED [ 59%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_overwrite_storm_detected PASSED [ 61%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_different_agents_storm_independent PASSED [ 63%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_llama_injection_marker PASSED [ 65%]
+tests/unit/test_poisoning.py::TestPoisoningDetection::test_system_tag_detected PASSED [ 68%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_empty_clocks_do_not_conflict PASSED [ 70%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_dominates_when_strictly_greater PASSED [ 72%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_concurrent_writes_detected PASSED [ 75%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_causal_sequence_not_concurrent PASSED [ 77%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_increment_creates_new_clock PASSED [ 79%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_merge_takes_component_wise_max PASSED [ 81%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_three_way_conflict_all_concurrent PASSED [ 84%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_new_agent_first_write PASSED [ 86%]
+tests/unit/test_vector_clock.py::TestVectorClockOrdering::test_equal_clocks_do_not_dominate_each_other PASSED [ 88%]
+tests/e2e/test_multi_agent_scenarios.py::test_parallel_research_agents_no_conflict PASSED [ 90%]
+tests/e2e/test_multi_agent_scenarios.py::test_structural_merge_resolves_dict_conflict PASSED [ 93%]
+tests/e2e/test_multi_agent_scenarios.py::test_branching_isolates_work_in_progress PASSED [ 95%]
+tests/e2e/test_multi_agent_scenarios.py::test_poisoning_detection_during_write PASSED [ 97%]
+tests/e2e/test_multi_agent_scenarios.py::test_concurrent_writes_to_multiple_keys PASSED [100%]
+
+============================== 44 passed in 0.22s ==============================

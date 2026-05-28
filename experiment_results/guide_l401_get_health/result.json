@@ -1,0 +1,22 @@
+{
+  "name": "guide_l401_get_health",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L401",
+  "claim": "GET /health returns {status: ok, backend: ...}",
+  "command": "curl http://localhost:8765/health",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "status_code": 200,
+    "body": {
+      "status": "ok",
+      "backend": "RedisBackend",
+      "redis_url": "redis://redis:6379/0"
+    }
+  }
+}

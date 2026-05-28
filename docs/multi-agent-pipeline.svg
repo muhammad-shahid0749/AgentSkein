@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="550" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Reference multi-agent pipeline (agents/run_agents.py)</text>
+  <text x="550" y="58" text-anchor="middle" font-size="13" fill="#475569">Five agents · three phases · seven-section auto-generated report</text>
+
+  <!-- Phase 1 frame -->
+  <rect x="40" y="90" width="1020" height="320" rx="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="60" y="115" font-size="14" font-weight="700" fill="#1e3a8a">Phase 1 — concurrent (asyncio.gather)</text>
+
+  <!-- Orchestrator -->
+  <rect x="450" y="135" width="200" height="60" rx="10" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="550" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#78350f">Orchestrator</text>
+  <text x="550" y="180" text-anchor="middle" font-size="11" fill="#374151">init namespace, log phases, kick off Phase 1</text>
+
+  <!-- Four parallel agents -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#ar4)">
+    <line x1="500" y1="195" x2="180" y2="235"/>
+    <line x1="525" y1="195" x2="420" y2="235"/>
+    <line x1="575" y1="195" x2="680" y2="235"/>
+    <line x1="600" y1="195" x2="920" y2="235"/>
+  </g>
+
+  <!-- Researcher-1 -->
+  <rect x="80" y="240" width="200" height="140" rx="10" fill="#fff" stroke="#3b82f6"/>
+  <text x="180" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Researcher-1</text>
+  <text x="180" y="280" text-anchor="middle" font-size="11" fill="#475569">metric: POPULARITY (stars)</text>
+  <text x="180" y="298" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">fork("branch/Researcher-1")</text>
+  <text x="180" y="316" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">GET api.github.com</text>
+  <text x="180" y="334" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("analysis-by-popularity")</text>
+  <text x="180" y="352" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("verdict")</text>
+  <text x="180" y="370" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">merge_to("main")</text>
+
+  <!-- Researcher-2 -->
+  <rect x="320" y="240" width="200" height="140" rx="10" fill="#fff" stroke="#3b82f6"/>
+  <text x="420" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Researcher-2</text>
+  <text x="420" y="280" text-anchor="middle" font-size="11" fill="#475569">metric: ACTIVITY (pushed_at)</text>
+  <text x="420" y="298" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">fork("branch/Researcher-2")</text>
+  <text x="420" y="316" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">GET api.github.com</text>
+  <text x="420" y="334" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("analysis-by-activity")</text>
+  <text x="420" y="352" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("verdict")</text>
+  <text x="420" y="370" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">merge_to("main")</text>
+
+  <!-- Researcher-3 -->
+  <rect x="580" y="240" width="200" height="140" rx="10" fill="#fff" stroke="#3b82f6"/>
+  <text x="680" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Researcher-3</text>
+  <text x="680" y="280" text-anchor="middle" font-size="11" fill="#475569">metric: ADOPTION (forks)</text>
+  <text x="680" y="298" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">fork("branch/Researcher-3")</text>
+  <text x="680" y="316" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">GET api.github.com</text>
+  <text x="680" y="334" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("analysis-by-adoption")</text>
+  <text x="680" y="352" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("verdict")</text>
+  <text x="680" y="370" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">merge_to("main")</text>
+
+  <!-- Safety -->
+  <rect x="820" y="240" width="200" height="140" rx="10" fill="#fff" stroke="#3b82f6"/>
+  <text x="920" y="263" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Safety-Monitor</text>
+  <text x="920" y="280" text-anchor="middle" font-size="11" fill="#475569">independent validator</text>
+  <text x="920" y="298" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">8 injection tests</text>
+  <text x="920" y="316" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">overwrite storm test</text>
+  <text x="920" y="334" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">scan repo descriptions</text>
+  <text x="920" y="352" text-anchor="middle" font-size="11" fill="#0f172a" font-family="ui-monospace,Consolas,Menlo,monospace">write("safety-report-details")</text>
+
+  <!-- Phase 2 -->
+  <rect x="40" y="430" width="1020" height="120" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="60" y="455" font-size="14" font-weight="700" fill="#78350f">Phase 2 — sequential</text>
+  <rect x="330" y="465" width="440" height="70" rx="10" fill="#fff" stroke="#d97706"/>
+  <text x="550" y="488" text-anchor="middle" font-size="13" font-weight="700" fill="#78350f">Analyst</text>
+  <text x="550" y="506" text-anchor="middle" font-size="11" fill="#374151">reads each researcher's branch directly (pre-merge ground truth),</text>
+  <text x="550" y="522" text-anchor="middle" font-size="11" fill="#374151">builds the conflict-resolution proof for Patterns A, B, C</text>
+
+  <!-- arrow phase1 -> phase2 -->
+  <line x1="550" y1="385" x2="550" y2="425" stroke="#374151" stroke-width="2" marker-end="url(#ar4)" stroke-dasharray="4 2"/>
+
+  <!-- Phase 3 -->
+  <rect x="40" y="570" width="1020" height="120" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="60" y="595" font-size="14" font-weight="700" fill="#064e3b">Phase 3 — sequential</text>
+  <rect x="330" y="605" width="440" height="70" rx="10" fill="#fff" stroke="#059669"/>
+  <text x="550" y="628" text-anchor="middle" font-size="13" font-weight="700" fill="#064e3b">Writer</text>
+  <text x="550" y="646" text-anchor="middle" font-size="11" fill="#374151">reads main snapshot + every agent's activity-{id} key,</text>
+  <text x="550" y="662" text-anchor="middle" font-size="11" fill="#374151">renders the 7-section ai_ecosystem_report.txt (~500 lines)</text>
+
+  <line x1="550" y1="550" x2="550" y2="585" stroke="#374151" stroke-width="2" marker-end="url(#ar4)" stroke-dasharray="4 2"/>
+
+  <!-- Verdict line -->
+  <text x="550" y="720" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">In our sandbox run: 3.76 s wall-clock · 2.19× concurrency speedup · 3 / 3 perspectives preserved · 5.8 writes/sec</text>
+  <text x="550" y="740" text-anchor="middle" font-size="12" fill="#475569">Pattern A passes · Pattern B detects · Pattern C unions 5 overlapping repo dicts · Safety score 8/9</text>
+</svg>

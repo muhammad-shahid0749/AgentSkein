@@ -1,0 +1,22 @@
+{
+  "name": "guide_l242_post_init_namespace",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L240-L249",
+  "claim": "POST /namespace/{ns}/init creates the namespace",
+  "command": "curl -X POST http://localhost:8765/namespace/test-task/init -d '{...}'",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "status_code": 200,
+    "body": {
+      "success": true,
+      "namespace": "test-task",
+      "agent_id": "orchestrator"
+    }
+  }
+}

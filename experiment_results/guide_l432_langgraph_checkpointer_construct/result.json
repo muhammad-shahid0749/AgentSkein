@@ -1,0 +1,15 @@
+{
+  "name": "guide_l432_langgraph_checkpointer_construct",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L425-L457",
+  "claim": "AgentSkeinCheckpointer constructor matches documented kwargs",
+  "command": "(inline construction; skipped if langgraph not installed)",
+  "status": "skipped",
+  "skip_reason": "module 'langgraph' not installed: No module named 'langgraph'",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

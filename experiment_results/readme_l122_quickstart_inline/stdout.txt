@@ -1,0 +1,7 @@
+[2m2026-05-28 13:51:06[0m [[32m[1minfo     [0m] [1mnamespace.created             [0m [36magent[0m=[35magent-A[0m [36mnamespace[0m=[35mtask-1[0m
+[2m2026-05-28 13:51:06[0m [[32m[1minfo     [0m] [1mbranch.created                [0m [36mbranch[0m=[35mbranch-A[0m [36mparent[0m=[35mmain[0m [36mstrategy[0m=[35mlazy_cow[0m
+[2m2026-05-28 13:51:06[0m [[32m[1minfo     [0m] [1mbranch.created                [0m [36mbranch[0m=[35mbranch-B[0m [36mparent[0m=[35mmain[0m [36mstrategy[0m=[35mlazy_cow[0m
+[2m2026-05-28 13:51:06[0m [[32m[1minfo     [0m] [1mbranch.merged                 [0m [36mconflicts[0m=[35m0[0m [36mfrom_branch[0m=[35mbranch-A[0m [36mmerged[0m=[35m1[0m [36mto_branch[0m=[35mmain[0m
+[2m2026-05-28 13:51:06[0m [[32m[1minfo     [0m] [1mbranch.merged                 [0m [36mconflicts[0m=[35m0[0m [36mfrom_branch[0m=[35mbranch-B[0m [36mmerged[0m=[35m1[0m [36mto_branch[0m=[35mmain[0m
+  finding-from-A: {'source': 'arxiv', 'topic': 'CRDT'}
+  finding-from-B: {'source': 'neurips', 'topic': 'vector clocks'}

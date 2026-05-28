@@ -1,0 +1,15 @@
+{
+  "name": "guide_l502_crewai_storage_direct",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L501-L518",
+  "claim": "AgentSkeinStorage.save / search work directly",
+  "command": "(inline snippet from guide)",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0032,
+  "exit_code": null,
+  "stdout": "\u001b[2m2026-05-28 13:51:10\u001b[0m [\u001b[32m\u001b[1minfo     \u001b[0m] \u001b[1mnamespace.created             \u001b[0m \u001b[36magent\u001b[0m=\u001b[35mresearcher\u001b[0m \u001b[36mnamespace\u001b[0m=\u001b[35mmarket-research-crew\u001b[0m\n\u001b[2m2026-05-28 13:51:10\u001b[0m [\u001b[33m\u001b[1mwarning  \u001b[0m] \u001b[1mconflict.detected             \u001b[0m \u001b[36mkey\u001b[0m=\u001b[35mmarket-size\u001b[0m \u001b[36mour_agent\u001b[0m=\u001b[35manalyst\u001b[0m \u001b[36mstrategy\u001b[0m=\u001b[35mmerge_structural\u001b[0m \u001b[36mtheir_agent\u001b[0m=\u001b[35mresearcher\u001b[0m\n\u001b[2m2026-05-28 13:51:10\u001b[0m [\u001b[33m\u001b[1mwarning  \u001b[0m] \u001b[1mconflict.rust_unavailable.fallback_dict_merge\u001b[0m \u001b[36mkey\u001b[0m=\u001b[35mmarket-size\u001b[0m\nsearch returned 1 results\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

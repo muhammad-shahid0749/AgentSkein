@@ -1,0 +1,38 @@
+{
+  "name": "guide_l268_fork_and_merge",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L266-L347",
+  "claim": "fork -> write -> merge round-trip leaves the key on main",
+  "command": "POST /fork, POST /write on the branch, POST /merge to main",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "merge": {
+      "success": true,
+      "namespace": "fork-test",
+      "from_branch": "branch/worker",
+      "to_branch": "main",
+      "merged_keys": [
+        "result"
+      ],
+      "conflict_keys": [],
+      "merged_count": 1,
+      "conflict_count": 0
+    },
+    "final": {
+      "key": "result",
+      "value": {
+        "x": 42
+      },
+      "namespace": "fork-test",
+      "branch": "main",
+      "agent_id": "worker",
+      "found": true
+    }
+  }
+}

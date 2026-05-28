@@ -1,0 +1,15 @@
+{
+  "name": "readme_l150_quickstart_subprocess",
+  "source_doc": "README.md",
+  "source_lines": "L149-L151",
+  "claim": "`python quickstart.py` runs successfully from repo root",
+  "command": "python quickstart.py",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.2007,
+  "exit_code": 0,
+  "stdout": "2026-05-28 13:51:07 [info     ] namespace.created              agent=agent-A namespace=task-1\n2026-05-28 13:51:07 [info     ] branch.created                 branch=branch-A parent=main strategy=lazy_cow\n2026-05-28 13:51:07 [info     ] branch.created                 branch=branch-B parent=main strategy=lazy_cow\n2026-05-28 13:51:07 [info     ] branch.merged                  conflicts=0 from_branch=branch-A merged=1 to_branch=main\n2026-05-28 13:51:07 [info     ] branch.merged                  conflicts=0 from_branch=branch-B merged=1 to_branch=main\nKeys on main after both merges: 2\n  finding-from-A: {'source': 'arxiv', 'topic': 'CRDT'}\n  finding-from-B: {'source': 'neurips', 'topic': 'vector clocks'}\n\nQuickstart PASSED: both findings present on main, zero data loss.\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

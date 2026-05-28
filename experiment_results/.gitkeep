@@ -1,0 +1,4 @@
+# Bind-mount target for docker-compose test-runner doc-experiments.
+# Output (run_summary.md, run_summary.json, per-experiment folders with
+# stdout/stderr/result.json) is written here by
+# tests/experiments/run_all_experiments.py and is not committed.

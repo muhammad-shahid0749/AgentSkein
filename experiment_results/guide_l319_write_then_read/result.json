@@ -1,0 +1,27 @@
+{
+  "name": "guide_l319_write_then_read",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L319-L327, L356-L371",
+  "claim": "POST /write/{key} then GET /read/{key} round-trips a value",
+  "command": "POST /namespace/test-task/write/finding-1 -> GET /namespace/test-task/read/finding-1",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "write_status": 200,
+    "read_body": {
+      "key": "finding-1",
+      "value": {
+        "summary": "CRDT works well"
+      },
+      "namespace": "test-task",
+      "branch": "main",
+      "agent_id": "researcher-1",
+      "found": true
+    }
+  }
+}

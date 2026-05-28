@@ -1,0 +1,172 @@
+
+────────────────────────────────────────────────────────────────────────────────────────── AgentSkein — GitHub AI Ecosystem Intelligence Pipeline ───────────────────────────────────────────────────────────────────────────────────────────
+
+  v AgentSkein API - backend: InMemoryBackend
+  v Namespace ready
+
+───────────────────────────────────────────────────────────────────────────────────── Phase 1 - Parallel: 3 Researchers (same query, different metrics) ─────────────────────────────────────────────────────────────────────────────────────
+
+  All 3 agents search: "ai agents python" - the SAME query
+
+  Researcher-1  metric: POPULARITY   ranks by star count
+  Researcher-2  metric: ACTIVITY     ranks by most recently updated
+  Researcher-3  metric: ADOPTION     ranks by fork count
+
+  Each writes to disjoint top-level keys (analysis-by-*) + one shared verdict key.
+
+
+[Researcher-1] Searching GitHub: "ai agents python" sorted by POPULARITY (most starred) ...
+
+[Researcher-2] Searching GitHub: "ai agents python" sorted by ACTIVITY (most recently updated) ...
+
+[Researcher-3] Searching GitHub: "ai agents python" sorted by ADOPTION (most forked) ...
+
+[Safety-Monitor] Running safety checks ...
+                            Injection Detection Tests                             
+╭─────┬──────────────────────────────┬───────────┬───────────┬───────────┬───────╮
+│   # │ Description                  │ Expected  │  Result   │ Severity  │ Pass  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   1 │ Clean GitHub description     │   safe    │   safe    │     -     │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   2 │ Classic ignore-instructions  │  unsafe   │  UNSAFE   │   high    │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   3 │ Disregard-prior-context      │  unsafe   │   safe    │     -     │ FAIL  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   4 │ [INST] LLaMA marker          │  unsafe   │  UNSAFE   │   high    │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   5 │ System tag injection         │  unsafe   │  UNSAFE   │   high    │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   6 │ Clean repo title             │   safe    │   safe    │     -     │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   7 │ Clean technical desc         │   safe    │   safe    │     -     │ PASS  │
+├─────┼──────────────────────────────┼───────────┼───────────┼───────────┼───────┤
+│   8 │ You-are-now variant          │  unsafe   │  UNSAFE   │   high    │ PASS  │
+╰─────┴──────────────────────────────┴───────────┴───────────┴───────────┴───────╯
+
+  [Safety-Monitor] Overwrite storm test (8 rapid writes) ...
+  [Safety-Monitor] Storm counter is per-session - OK
+
+  [Safety-Monitor] Scanning real GitHub repo descriptions ...
+  [Safety-Monitor] Scanned 0 real GitHub descriptions - all clean
+
+  [Safety-Monitor] Safety score: 8/9
+  [Researcher-3] GitHub: 19,388 total results for "ai agents python" - analysing top 10 by ADOPTION
+  [Researcher-3] 184,603 stars  46,207 forks  Significant-Gravitas/AutoGPT            [Python]
+  [Researcher-3] 137,876 stars  22,819 forks  langchain-ai/langchain                  [Python]
+  [Researcher-3] 142,983 stars  22,493 forks  langgenius/dify                         [TypeScript]
+  [Researcher-3] 111,983 stars  16,625 forks  Shubhamsaboo/awesome-llm-apps           [Python]
+  [Researcher-3]  95,996 stars  10,782 forks  browser-use/browser-use                 [Python]
+  [Researcher-3]  43,637 stars   6,878 forks  microsoft/qlib                          [Python]
+  [Researcher-3]  68,202 stars   6,856 forks  OpenBB-finance/OpenBB                   [Python]
+  [Researcher-2] GitHub: 19,388 total results for "ai agents python" - analysing top 10 by ACTIVITY
+  [Researcher-3]  56,976 stars   6,487 forks  mem0ai/mem0                             [Python]
+  [Researcher-2]       6 stars       2 forks  corrupt0303/dating-agent                [Python]
+  [Researcher-3]  10,440 stars   5,665 forks  aden-hive/hive                          [Python]
+  [Researcher-1] GitHub: 19,388 total results for "ai agents python" - analysing top 10 by POPULARITY
+  [Researcher-2]  12,386 stars     924 forks  e2b-dev/E2B                             [Python]
+  [Researcher-3]  33,238 stars   5,603 forks  langchain-ai/langgraph                  [Python]
+  [Researcher-3] Best by ADOPTION: Significant-Gravitas/AutoGPT | 184,603 stars  46,207 forks  health_score=10.0
+  [Researcher-1] 184,603 stars  46,207 forks  Significant-Gravitas/AutoGPT            [Python]
+  [Researcher-2]      26 stars      12 forks  yaalalabs/agent-kernel                  [Python]
+  [Researcher-1] 142,983 stars  22,493 forks  langgenius/dify                         [TypeScript]
+  [Researcher-2]     354 stars      55 forks  vivekchand/clawmetry                    [Python]
+  [Researcher-1] 137,876 stars  22,819 forks  langchain-ai/langchain                  [Python]
+  [Researcher-2]       0 stars       0 forks  sanikanaik456/ai-data-analysis-agent    [Unknown]
+  [Researcher-3] Merged 13 keys | 0 auto-resolved
+  [Researcher-1] 111,983 stars  16,625 forks  Shubhamsaboo/awesome-llm-apps           [Python]
+  [Researcher-2]       1 stars       0 forks  Honore-12/NEXORA-AI                     [Python]
+  [Researcher-1]  95,996 stars  10,782 forks  browser-use/browser-use                 [Python]
+  [Researcher-2]      31 stars       2 forks  Peuqui/AIfred-Intelligence              [Python]
+  [Researcher-1]  68,202 stars   6,856 forks  OpenBB-finance/OpenBB                   [Python]
+  [Researcher-2]       1 stars       0 forks  vitaliyfedotovpro-art/astrum-verum      [Python]
+  [Researcher-1]  56,976 stars   6,487 forks  mem0ai/mem0                             [Python]
+  [Researcher-2]       8 stars       1 forks  bilal0399/learn-agentic-ai              [Unknown]
+  [Researcher-1]  43,637 stars   6,878 forks  microsoft/qlib                          [Python]
+  [Researcher-2]       0 stars       0 forks  alfred-os/AlfredOS                      [Python]
+  [Researcher-2] Best by ACTIVITY: corrupt0303/dating-agent | 6 stars  2 forks  health_score=10.0
+  [Researcher-1]  40,401 stars   5,437 forks  agno-agi/agno                           [Python]
+  [Researcher-1]  33,301 stars   2,287 forks  AstrBotDevs/AstrBot                     [Python]
+  [Researcher-1] Best by POPULARITY: Significant-Gravitas/AutoGPT | 184,603 stars  46,207 forks  health_score=10.0
+  [Researcher-2] Merged 13 keys | 0 auto-resolved
+  [Researcher-1] Merged 13 keys | 0 auto-resolved
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────── Phase 2 - Analyst ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[Analyst] Analysing merged data + building conflict proof ...
+  [Analyst] Found 22 repos on main
+  [Analyst] Pattern A (disjoint keys): 3/3 preserved
+  [Analyst] Pattern B (shared key): conflict detected - surviving writer = Researcher-1
+  [Analyst] Wrote 6 analysis keys
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────── Phase 3 - Writer ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+[Writer] Building comprehensive intelligence report ...
+  [Writer] Saved -> agents/ai_ecosystem_report.txt  (529 lines, 7 sections)
+╭───────────────────────────────────────────────────────────────────────────────────────────── Report Preview - Section 1 (Executive Summary) ──────────────────────────────────────────────────────────────────────────────────────────────╮
+│ +======================================================================+                                                                                                                                                                  │
+│ |                    SECTION 1 - EXECUTIVE SUMMARY                     |                                                                                                                                                                  │
+│ +======================================================================+                                                                                                                                                                  │
+│                                                                                                                                                                                                                                           │
+│   Did AgentSkein demonstrate its core claim in this run?                                                                                                                                                                                  │
+│                                                                                                                                                                                                                                           │
+│     Pattern A - disjoint top-level keys (the design pattern that                                                                                                                                                                          │
+│                actually preserves all perspectives via 3-way merge):                                                                                                                                                                      │
+│                3 of 3 researcher perspectives preserved on main.                                                                                                                                                                          │
+│                -> [PASS - zero data loss across 3 concurrent writers]                                                                                                                                                                     │
+│                                                                                                                                                                                                                                           │
+│     Pattern B - shared same-key writes (intentional same-key                                                                                                                                                                              │
+│                conflict to demonstrate detection honestly):                                                                                                                                                                               │
+│                Conflict DETECTED via vector clocks.                                                                                                                                                                                       │
+│                Surviving writer on main = Researcher-1.                                                                                                                                                                                   │
+│                Losing writers = Researcher-2, Researcher-3.                                                                                                                                                                               │
+│                By design - same-key flat-schema writes cannot                                                                                                                                                                             │
+│                be unioned by 3-way merge. See Section 3b.                                                                                                                                                                                 │
+│                                                                                                                                                                                                                                           │
+│     Pattern C - overlapping repo-* keys: see Section 3c.                                                                                                                                                                                  │
+│                                                                                                                                                                                                                                           │
+│   Net assessment:  The 3-way merge engine correctly distinguishes                                                                                                                                                                         │
+│   what it CAN merge (disjoint keys -> union) from what it CANNOT                                                                                                                                                                          │
+│   (same-key conflicting scalars -> single survivor with audit trail).                                                                                                                                                                     │
+│   Detection in both cases relied on vector-clock concurrency. The                                                                                                                                                                         │
+│   full event-by-event activity log for every agent is in Section 2.                                                                                                                                                                       │
+│                                                                                                                                                                                                                                           │
+│ +======================================================================+                                                                                                                                                                  │
+│ |               SECTION 2 - PER-AGENT ACTIVITY TIMELINE                |                                                                                                                                                                  │
+│ +======================================================================+                                                                                                                                                                  │
+│                                                                                                                                                                                                                                           │
+│   Every agent records timestamped events in its own activity log                                                                                                                                                                          │
+│   (key = activity-{agent_id}). The lines below are read verbatim                                                                                                                                                                          │
+│   from AgentSkein - no reconstruction.                                                                                                                                                                                                    │
+│                                                                                                                                                                                                                                           │
+│   --------------------------------------------------------------------                                                                                                                                                                    │
+│   [Orchestrator]  (8 events)                                                                                                                                                                                                              │
+│   --------------------------------------------------------------------                                                                                                                                                                    │
+│     [  1] +     0ms  pipeline.start                base_url=http://localhost:8765                                                                                                                                                         │
+│     [  2] +    12ms  api.health.ok                 backend=InMemoryBackend                                                                                                                                                                │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────── Done ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+╭────────────────────┬────────────────────────────────────────────┬──────────┬────────────────╮
+│ Agent              │ Task                                       │  Status  │         Result │
+├────────────────────┼────────────────────────────────────────────┼──────────┼────────────────┤
+│ Researcher-1       │ Searched by POPULARITY (stars)             │    v     │       10 repos │
+│ Researcher-2       │ Searched by ACTIVITY (last commit)         │    v     │       10 repos │
+│ Researcher-3       │ Searched by ADOPTION (forks)               │    v     │       10 repos │
+│ Safety-Monitor     │ Injection + storm tests                    │    v     │            8/9 │
+│ Analyst            │ Statistics + conflict story                │    v     │       22 repos │
+│ Writer             │ AI Ecosystem Report                        │    v     │          saved │
+╰────────────────────┴────────────────────────────────────────────┴──────────┴────────────────╯
+
+                                                                        
+  Total repos on main              22                                   
+  Total AgentSkein keys            42                                   
+  Disjoint analysis keys           3                                    
+                                   (analysis-by-popularity/activity/a…  
+  Shared verdict survivor          Researcher-1                         
+  Safety score                     8/9                                  
+  Total time                       1.3s                                 
+                                                                        
+
+  Open  agents/ai_ecosystem_report.txt
+

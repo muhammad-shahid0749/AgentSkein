@@ -1,0 +1,16 @@
+{
+  "scenario": "scenario_04_poisoning_defence",
+  "description": "We push 6 injection payloads + 3 benign writes through PoisoningDetector and then trigger an overwrite storm. We verify the detector flags exactly the adversarial inputs.",
+  "duration_s": 0.001,
+  "event_count": 14,
+  "passed": true,
+  "summary": "Injection wave: 6/6 blocked. Benign wave: 0 false positives (should be 0). Storm wave: 5 medium alerts (\u22651 expected).",
+  "claim": "PoisoningDetector blocks injection payloads with severity=high and flags overwrite storms with severity=medium; benign writes pass through unflagged.",
+  "metrics": {
+    "injections_blocked": 6,
+    "injections_total": 6,
+    "benign_false_positives": 0,
+    "benign_total": 3,
+    "storm_alerts_observed": 5
+  }
+}

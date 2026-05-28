@@ -1,0 +1,15 @@
+{
+  "name": "readme_l397_rust_extension_import",
+  "source_doc": "README.md",
+  "source_lines": "L394-L398",
+  "claim": "`from agentskein._core import py_three_way_merge; print('Rust OK')`",
+  "command": "python -c \"from agentskein._core import py_three_way_merge; print('Rust OK')\"",
+  "status": "skipped",
+  "skip_reason": "Rust extension not compiled (run `maturin develop`): No module named 'agentskein._core'",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

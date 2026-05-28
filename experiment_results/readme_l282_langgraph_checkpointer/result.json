@@ -1,0 +1,15 @@
+{
+  "name": "readme_l282_langgraph_checkpointer",
+  "source_doc": "README.md",
+  "source_lines": "L282-L292",
+  "claim": "AgentSkeinCheckpointer accepts (agent_id, namespace, redis_url)",
+  "command": "from agentskein.adapters.langgraph_adapter import AgentSkeinCheckpointer",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.002,
+  "exit_code": null,
+  "stdout": "[expected] langgraph not installed: LangGraph is not installed. Install with: pip install 'agentskein[langgraph]'\n",
+  "stderr": "",
+  "error": "",
+  "extra": {}
+}

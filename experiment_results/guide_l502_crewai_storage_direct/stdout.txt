@@ -1,0 +1,4 @@
+[2m2026-05-28 13:51:10[0m [[32m[1minfo     [0m] [1mnamespace.created             [0m [36magent[0m=[35mresearcher[0m [36mnamespace[0m=[35mmarket-research-crew[0m
+[2m2026-05-28 13:51:10[0m [[33m[1mwarning  [0m] [1mconflict.detected             [0m [36mkey[0m=[35mmarket-size[0m [36mour_agent[0m=[35manalyst[0m [36mstrategy[0m=[35mmerge_structural[0m [36mtheir_agent[0m=[35mresearcher[0m
+[2m2026-05-28 13:51:10[0m [[33m[1mwarning  [0m] [1mconflict.rust_unavailable.fallback_dict_merge[0m [36mkey[0m=[35mmarket-size[0m
+search returned 1 results

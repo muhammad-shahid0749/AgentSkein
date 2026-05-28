@@ -1,0 +1,17 @@
+{
+  "scenario": "scenario_01_multi_writer_race",
+  "description": "Five agents race to write the same shared key 'market-size'. We compare plain dict / naive Redis / AgentSkein and count how many writers survive on the final state.",
+  "duration_s": 0.02,
+  "event_count": 24,
+  "passed": true,
+  "summary": "Plain dict: 1/5 writes survived (4/5 lost silently, survivor=['agent-2']).\n\nNaive Redis: 1/5 writes survived (4/5 lost silently, survivor=['agent-5']).\n\nAgentSkein: 5/5 writers preserved as disjoint keys, shared 'market-size' resolved to chosen_by=['agent-5'], conflict detected via vector clocks.",
+  "claim": "AgentSkein detects concurrent writes via vector clocks and keeps an audit trail; naive backends silently lose 4 of 5 writers.",
+  "metrics": {
+    "plain_dict_writes_surviving": 1,
+    "naive_redis_writes_surviving": 1,
+    "agentskein_writes_surviving": 5,
+    "agentskein_conflict_detected": true,
+    "agentskein_audit_trail": true,
+    "writers": 5
+  }
+}

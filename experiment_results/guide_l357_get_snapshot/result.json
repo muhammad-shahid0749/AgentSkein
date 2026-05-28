@@ -1,0 +1,27 @@
+{
+  "name": "guide_l357_get_snapshot",
+  "source_doc": "AGENTS_INTEGRATION_GUIDE.md",
+  "source_lines": "L357-L371",
+  "claim": "GET /snapshot returns the full dict for a namespace",
+  "command": "curl http://localhost:8765/namespace/test-task/snapshot",
+  "status": "pass",
+  "skip_reason": "",
+  "duration_s": 0.0,
+  "exit_code": null,
+  "stdout": "",
+  "stderr": "",
+  "error": "",
+  "extra": {
+    "status_code": 200,
+    "body": {
+      "namespace": "test-task",
+      "branch": "main",
+      "count": 1,
+      "data": {
+        "finding-1": {
+          "summary": "CRDT works well"
+        }
+      }
+    }
+  }
+}
