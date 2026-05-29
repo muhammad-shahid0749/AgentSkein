@@ -536,6 +536,6 @@ report:
   author = {Shahid, Muhammad},
   year   = {2026},
   note        = {Open-source release; see project README for details},
-  url    = {https://github.com/<your-org>/agentskein}
+  url    = {https://github.com/muhammad-shahid0749/AgentSkein}
 }
 ```
